@@ -96,3 +96,6 @@ The document classifier trains itself on first start. Trained models and the dat
 
 ## Disclaimer
 Student learning project. Not affiliated with any government body. Results are machine-generated and are not legal advice. Use only documents you are allowed to process.
+
+## Demo video
+[▶ Watch the demo](docs/demo.mp4)
