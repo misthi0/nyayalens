@@ -1,0 +1,5 @@
+Model                            Accuracy   Macro F1  Time (s)
+---------------------------------------------------------------
+Naive Bayes (Complement)            0.975      0.976       0.4
+Linear SVM                          0.983      0.984       0.4
+Logistic Regression (used)          0.983      0.984       0.8

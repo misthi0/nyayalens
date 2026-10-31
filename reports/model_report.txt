@@ -1,0 +1,54 @@
+NYAYALENS - MODEL EVALUATION REPORT
+============================================================
+Model file : doc_classifier.joblib  (971 KB, trained Sun Oct 25 20:23:27 2026)
+Algorithm  : TF-IDF (1-2 word n-grams) + Logistic Regression
+Dataset    : 1507 samples, 7 classes
+   Aadhaar card           synthetic       150
+   Business agreement     real:CUAD       509
+   Business agreement     synthetic       100
+   Court paper            real:OpenNyAI   48
+   Court paper            synthetic       100
+   Marriage certificate   synthetic       150
+   Other document         synthetic       150
+   PAN card               synthetic       150
+   Stamp paper            synthetic       150
+
+1) HELD-OUT TEST  (293 samples from documents not used in training; shared documents: 0)
+   Accuracy 1.000 | Macro F1 1.000
+                      precision    recall  f1-score   support
+
+        Aadhaar card       1.00      1.00      1.00        35
+  Business agreement       1.00      1.00      1.00       115
+         Court paper       1.00      1.00      1.00        19
+Marriage certificate       1.00      1.00      1.00        36
+      Other document       1.00      1.00      1.00        34
+            PAN card       1.00      1.00      1.00        28
+         Stamp paper       1.00      1.00      1.00        26
+
+            accuracy                           1.00       293
+           macro avg       1.00      1.00      1.00       293
+        weighted avg       1.00      1.00      1.00       293
+
+   Confusion matrix image saved: reports/confusion_matrix.png
+
+2) 5-FOLD CROSS-VALIDATION (grouped by document)
+   Fold accuracies: [0.997, 0.98, 0.973, 0.963, 1.0]
+   Mean 0.983 +/- 0.014
+
+3) WHAT THE MODEL LEARNED (words that push toward each class)
+   Aadhaar card          : aadhaar, india, of india, dob, vid, meri, mera, identification
+   Business agreement    : agreement, and, or, party, shall, any, this agreement, its
+   Court paper           : court, case, appellant, the court, under section, section, the appellant, in the
+   Marriage certificate  : marriage, registration, certify, solemnized on, solemnized, to certify, mr, wife
+   Other document        : you, notes, for days, symptoms, amount rs, bill to, bill, percent total
+   PAN card              : name, permanent, income, govt of, govt, signature, tax, father
+   Stamp paper           : stamp, attested, notary, notary public, public, the property, property, judicial
+
+4) LIVE PREDICTIONS ON SAMPLE FILES
+   aadhaar_card.txt           -> Aadhaar card         (87.7%)
+   business_agreement.txt     -> Business agreement   (97.4%)
+   court_order.txt            -> Court paper          (96.1%)
+   pan_card.txt               -> PAN card             (98.6%)
+
+NOTE: Most classes include synthetic data and classes look very different, so scores are
+optimistic. Real-world accuracy must be measured on new, real documents.

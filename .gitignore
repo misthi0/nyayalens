@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+venv/
+.env
+*.db
+models/*.joblib
+.pytest_cache/
+
+# private / generated (added before first upload)
+.DS_Store
+*.bak
+*.pre-*
+dataset/
+data.csv
+nyayalens.db
+.env
+venv/
